@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #000;
+    --card: #111;
+    --text: #fff;
+    --muted: #999;
+    --border: #222;
+    --accent: #fff;
+    --correct: #1d8f4d;
+    --wrong: #b53a3a;
+}
+
+body.light-mode {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #111;
+    --muted: #666;
+    --border: #ddd;
+    --accent: #111;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.2s;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding: 16px 18px;
+}
+
+.screen.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-card,
+.game-card {
+    width: min(860px, 96%);
+    margin-inline: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 22px;
+}
+
+.intro-card {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+    margin-bottom: 16px;
+}
+
+.intro-text {
+    color: var(--muted);
+    max-width: 550px;
+    margin: 0 auto 22px;
+}
+
+.progress-preview {
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+.start-btn {
+    border: none;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1000px, 100%);
+    margin: 0 auto;
+    padding: 4px 6px 8px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 12px;
+    font-family: 'Orbitron', sans-serif;
+    flex-wrap: wrap;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.progress-item {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #222;
+    color: #888;
+}
+
+.progress-item.active {
+    background: white;
+    color: black;
+}
+
+.progress-item.done {
+    background: #1d8f4d;
+    color: white;
+}
+
+body.light-mode .progress-item.active {
+    background: black;
+    color: white;
+}
+
+.prompt-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flag {
+    display: block;
+    width: min(360px, 100%);
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 0 auto 12px;
+    border: 1px solid var(--border);
+}
+
+#flag.hidden {
+    display: none;
+}
+
+#prompt-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#question {
+    text-align: center;
+    margin: 14px 0 12px;
+    font-size: 1.2rem;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.option-btn {
+    border: 1px solid var(--border);
+    background: #1a1a1a;
+    color: white;
+    border-radius: 12px;
+    min-height: 56px;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 12px;
+}
+
+body.light-mode .option-btn {
+    background: #eee;
+    color: black;
+}
+
+.option-btn.correct {
+    background: var(--correct);
+    color: #fff;
+}
+
+.option-btn.wrong {
+    background: var(--wrong);
+    color: #fff;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+.round-controls {
+    margin-top: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#status-text {
+    color: var(--muted);
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: var(--card);
+    color: var(--text);
+}
+
+.completion-list {
+    margin: 20px 0;
+    line-height: 1.9;
+}
+
+.end-message {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .screen {
+        padding: 60px 12px 12px;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .intro-card,
+    .game-card {
+        padding: 16px;
+    }
+
+    .answers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar {
+        gap: 14px;
+        font-size: 0.9rem;
+    }
+}
