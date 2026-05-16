@@ -272,7 +272,6 @@ if (userAnswer === currentCorrectAnswer) {
 - **Scalability**: Automatically supports all 195+ countries
 - **Consistency**: Country names, capitals, and codes always match
 - **Low Maintenance**: No need to manually update geography data
-- **Real-World Data**: Users learn actual, up-to-date geographic information
 
 ---
 
@@ -292,19 +291,10 @@ if (userAnswer === currentCorrectAnswer) {
 2. Navigate to the `assignment1` folder
 3. Open `index.html` in a web browser
 4. Start playing!
+                              OR
+**[Play GeoGuess Live](https://geo-guess-sepia-two.vercel.app/)** I deployed it for you to try :)
 
 The application automatically fetches country data on load, so no additional setup is required.
-
----
-
-## Key Takeaways from My First API Project
-
-- REST APIs are powerful tools for accessing real-world data
-- Understanding HTTP methods (GET, POST, etc.) is fundamental
-- JSON is the de-facto standard for API responses
-- API keys secure endpoints and track usage
-- Async/await makes working with HTTP requests clean and readable
-- A single API call can power multiple features
 
 ---
 
